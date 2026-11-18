@@ -30,10 +30,22 @@ public class PingPong {
 
       /* Draw the machine (this can be just a box or you can import an image) with the 3 numbers, current balance, 
          and calls drawPayOut() */
-        public void drawPaddle(Graphics g) {
+    public void drawPaddle(Graphics g) {
+        g.setColor(Color.WHITE);
         g.fillRect(50, 50+y, 15, 100);
         g.fillRect(750, 50+y2, 15,100);
     }
+
+    public void drawBall(Graphics g) {
+        g.setColor(Color.WHITE);
+        g.fillOval(400,300,50,50);
+    }
+
+    public void drawBackground(Graphics g) {
+        g.setColor(Color.BLACK);
+        g.fillRect(0,0,800,600);
+    }
+
 
     public void moveUp(int i) {
         if (i == 1) {
@@ -57,7 +69,7 @@ public class PingPong {
 		   y2+=5;
 		}
 
-        } //test 2
+        }
 		
 	}
 

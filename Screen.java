@@ -49,9 +49,11 @@ public class Screen extends JPanel implements KeyListener {
 	@Override
 	public void paintComponent(Graphics g){
 	    super.paintComponent(g);
+        p.drawBackground(g);
         // Call the draw methods
 
         p.drawPaddle(g);
+        p.drawBall(g);
        
 
 
