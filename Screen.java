@@ -59,6 +59,20 @@ public class Screen extends JPanel implements KeyListener {
 
 	}
 
+    public void animate() {
+        while (true) {
+            try {
+                Thread.sleep(10);
+            } catch (InterruptedException ex) {
+                Thread.currentThread().interrupt();
+            }
+            
+            p.ballMovement();
+            
+            repaint();
+        }
+   }
+
 
         @Override
 

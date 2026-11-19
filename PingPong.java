@@ -7,10 +7,12 @@ public class PingPong {
 
 
        // Instance Variables
-       Font fontPayout;
-       Color blue, yellow;
-       int y, y2, ballX, ballY;
-       boolean play = true;
+    Font fontPayout;
+    Color blue, yellow;
+    int y, y2, ballX, ballY;
+    boolean play = true;
+    int xMovement = 4;
+    int yMovement = -4;
 
 
 
@@ -50,15 +52,21 @@ public class PingPong {
 
     public void ballMovement() {
         
-        int xMovement =4;
-        int yMovement =4;
-        while (play) {
-            ballX+=xMovement;
-            ballY+=yMovement;
-            if (ballY<=-25){
-                yMovement = -4;
-            } else if (ballY)
+        ballX += xMovement;
+        ballY += yMovement;
+
+        if (ballY <= -300) {
+
+        yMovement = 4;
+
         }
+
+        if (ballY >= 250) {
+
+        yMovement = -4;
+
+        }
+
 
     }
 
