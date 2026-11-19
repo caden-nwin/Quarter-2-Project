@@ -9,7 +9,9 @@ public class PingPong {
        // Instance Variables
        Font fontPayout;
        Color blue, yellow;
-       int y, y2;
+       int y, y2, ballX, ballY;
+       boolean play = true;
+
 
 
       // Constructor
@@ -38,7 +40,7 @@ public class PingPong {
 
     public void drawBall(Graphics g) {
         g.setColor(Color.WHITE);
-        g.fillOval(400,300,50,50);
+        g.fillOval(400+ballX,300+ballY,50,50);
     }
 
     public void drawBackground(Graphics g) {
@@ -46,15 +48,29 @@ public class PingPong {
         g.fillRect(0,0,800,600);
     }
 
+    public void ballMovement() {
+        
+        int xMovement =4;
+        int yMovement =4;
+        while (play) {
+            ballX+=xMovement;
+            ballY+=yMovement;
+            if (ballY<=-25){
+                yMovement = -4;
+            } else if (ballY)
+        }
+
+    }
+
 
     public void moveUp(int i) {
         if (i == 1) {
             if (y > -50) {
-                y-=5;
+                y-=8;
 		}
         } else if (i == 2) { //differentiates movement between the respective paddles
             if (y2 > -50) {
-                y2-=5;
+                y2-=8;
 		}
         }
 	}
@@ -62,11 +78,11 @@ public class PingPong {
     public void moveDown(int j) {
         if (j == 1) {
             if(y+150 < 600) {
-		   y+=5;
+		   y+=8;
 		}
         } else if (j  ==2) {
             if(y2+150 < 600) {
-		   y2+=5;
+		   y2+=8;
 		}
 
         }
