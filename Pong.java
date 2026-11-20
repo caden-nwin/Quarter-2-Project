@@ -35,7 +35,7 @@ public class Pong { // testing github
       // Example: Draw a score table. 
 
       public void drawScore() {
-        
+
       }
       
 
@@ -85,13 +85,19 @@ public class Pong { // testing github
 
         }
 
+        if (realCX >= 0 && realCX <= 800) {
 
-        if (realCX <= 75 && realCY > realPY-50 && realCY < realPY+50) {
+            if (realCX <= 75 && realCY > realPY-50 && realCY < realPY+50) {
             xMovement = 4;
 
         } else if (realCX >= 725 && realCY > realPY2-50 && realCY < realPY2+50) {
             xMovement = -4;
         }
+
+        }
+
+
+        
 
         
 
@@ -102,11 +108,11 @@ public class Pong { // testing github
     public void moveUp(int i) {
         if (i == 1) {
             if (y > -50) {
-                y-=8;
+                y-=12;
 		}
         } else if (i == 2) { //differentiates movement between the respective paddles
             if (y2 > -50) {
-                y2-=8;
+                y2-=12;
 		}
         }
 	}
@@ -114,11 +120,11 @@ public class Pong { // testing github
     public void moveDown(int j) {
         if (j == 1) {
             if(y+150 < 600) {
-		   y+=8;
+		   y+=12;
 		}
         } else if (j  ==2) {
             if(y2+150 < 600) {
-		   y2+=8;
+		   y2+=12;
 		}
 
         }
