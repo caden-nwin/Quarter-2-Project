@@ -14,6 +14,11 @@ public class Screen extends JPanel implements KeyListener {
 
 
 	// instance variables
+
+    private boolean wPressed = false;
+    private boolean sPressed = false;
+    private boolean upPressed = false;
+    private boolean downPressed = false;
         
 
 
@@ -68,6 +73,8 @@ public class Screen extends JPanel implements KeyListener {
             }
             
             p.ballMovement();
+
+            paddleMovement();
             
             repaint();
         }
@@ -82,24 +89,29 @@ public class Screen extends JPanel implements KeyListener {
 
 		//interpret key clicks
 		if (e.getKeyCode() == 38){   // up arrow
-			p.moveUp(2);
+
+            upPressed = true;
+
 		}
 
         if (e.getKeyCode() == 87){   // up arrow
-			p.moveUp(1);
+
+            wPressed = true;
 		}
 
 
 		//interpret key clicks
 		if (e.getKeyCode() == 40){   // down arrow
-			p.moveDown(2);
+
+            downPressed = true;
 		}
 
         if (e.getKeyCode() == 83){   // down arrow
-			p.moveDown(1);
+
+            sPressed = true;
 		}
 
-        repaint();
+
 
 		
 	}
@@ -108,7 +120,47 @@ public class Screen extends JPanel implements KeyListener {
 
     // Required KeyListener interface methods
     @Override public void keyTyped(KeyEvent e) {}
-    @Override public void keyReleased(KeyEvent e) {}
+
+
+    @Override public void keyReleased(KeyEvent e) {
+
+
+        if (e.getKeyCode() == 38){   // up arrow
+
+            upPressed = false;
+		}
+
+        if (e.getKeyCode() == 87){   // up arrow
+
+            wPressed = false;
+		}
+
+
+		//interpret key clicks
+		if (e.getKeyCode() == 40){   // down arrow
+
+            downPressed = false;
+		}
+
+        if (e.getKeyCode() == 83){   // down arrow
+
+            sPressed = false;
+		}
+
+    }
+
+    public void paddleMovement() {
+        if (wPressed) {
+            p.moveUp(1);
+        } else if (sPressed) {
+            p.moveDown(1);
+        } else if (upPressed) {
+            p.moveUp(2);
+        } else if (downPressed) {
+            p.moveDown(2);
+        }
+
+    }
 	
 }
 

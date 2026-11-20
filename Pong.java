@@ -108,11 +108,11 @@ public class Pong { // testing github
     public void moveUp(int i) {
         if (i == 1) {
             if (y > -50) {
-                y-=12;
+                y-=5;
 		}
         } else if (i == 2) { //differentiates movement between the respective paddles
             if (y2 > -50) {
-                y2-=12;
+                y2-=5;
 		}
         }
 	}
@@ -120,11 +120,11 @@ public class Pong { // testing github
     public void moveDown(int j) {
         if (j == 1) {
             if(y+150 < 600) {
-		   y+=12;
+		   y+=5;
 		}
         } else if (j  ==2) {
             if(y2+150 < 600) {
-		   y2+=12;
+		   y2+=5;
 		}
 
         }
