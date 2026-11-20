@@ -90,7 +90,7 @@ public class Pong { // testing github
             if (realCX <= 75 && realCY > realPY-50 && realCY < realPY+50) {
             xMovement = 4;
 
-        } else if (realCX >= 725 && realCY > realPY2-50 && realCY < realPY2+50) {
+        } else if (realCX >= 700 && realCY > realPY2-50 && realCY < realPY2+50) {
             xMovement = -4;
         }
 
