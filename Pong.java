@@ -32,7 +32,11 @@ public class Pong { // testing github
       
 
 
-      // Example: Draw a payout table. 
+      // Example: Draw a score table. 
+
+      public void drawScore() {
+        
+      }
       
 
       /* Draw the machine (this can be just a box or you can import an image) with the 3 numbers, current balance, 
