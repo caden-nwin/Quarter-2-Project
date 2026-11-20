@@ -9,7 +9,7 @@ public class PingPong { // testing github
        // Instance Variables
     Font fontPayout;
     Color blue, yellow;
-    int y, y2, ballX, ballY;
+    int y, y2, ballX, ballY, pFrontX,pFrontY;
     boolean play = true;
     int xMovement = -4;
     int yMovement = -4;
@@ -30,13 +30,17 @@ public class PingPong { // testing github
 
       public int getbX() {
         return ballX;
-        
-
       }
 
       public int getbY() {
         return ballY;
+      }
 
+      public int getpX() {
+        return pFrontX;
+      }
+      public int getpY() {
+        return pFrontY;
       }
 
 

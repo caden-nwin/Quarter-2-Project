@@ -18,7 +18,7 @@ public class Screen extends JPanel implements KeyListener {
 
 
 	// Initialization Constructor
-    PingPong p = new PingPong();
+    Pong p = new Pong();
 
 
 	public Screen() {
