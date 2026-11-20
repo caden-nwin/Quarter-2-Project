@@ -3,7 +3,7 @@ import java.awt.Color;
 import java.awt.Font;  
 
 
-public class PingPong {
+public class PingPong { // testing github
 
 
        // Instance Variables
@@ -21,7 +21,7 @@ public class PingPong {
         //Example: Initialize/instantiate instance variables
         fontPayout = new Font("Arial", Font.BOLD, 20); //20 is font size. 
         blue = new Color(0, 0, 255);
-        yellow = new Color(255, 255, 0);
+        yellow = new Color(255, 255, 0); //testing
 
 
       }
