@@ -11,7 +11,7 @@ public class PingPong { // testing github
     Color blue, yellow;
     int y, y2, ballX, ballY;
     boolean play = true;
-    int xMovement = 4;
+    int xMovement = -4;
     int yMovement = -4;
 
 
