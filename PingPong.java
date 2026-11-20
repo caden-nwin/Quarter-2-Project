@@ -24,8 +24,23 @@ public class PingPong { // testing github
         yellow = new Color(255, 255, 0); //testing
 
 
+
+
       }
 
+      public int getbX() {
+        return ballX;
+        
+
+      }
+
+      public int getbY() {
+        return ballY;
+
+      }
+
+
+      
       
 
 
