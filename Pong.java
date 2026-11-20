@@ -9,7 +9,7 @@ public class Pong { // testing github
        // Instance Variables
     Font fontPayout;
     Color blue, yellow;
-    int y, y2, ballX, ballY, pFrontX,pFrontY;
+    int y, y2, ballX, ballY, realPY2, realPY, realCX, realCY;
     boolean play = true;
     int xMovement = -4;
     int yMovement = -4;
@@ -23,25 +23,9 @@ public class Pong { // testing github
         blue = new Color(0, 0, 255);
         yellow = new Color(255, 255, 0); //testing
 
-
-
-
       }
 
-      public int getbX() {
-        return ballX;
-      }
-
-      public int getbY() {
-        return ballY;
-      }
-
-      public int getpX() {
-        return pFrontX;
-      }
-      public int getpY() {
-        return pFrontY;
-      }
+      
 
 
       
@@ -57,13 +41,26 @@ public class Pong { // testing github
         g.setColor(Color.WHITE);
         g.fillRect(50, 50+y, 15, 100);
         g.fillRect(750, 50+y2, 15,100);
+
+        realPY = 50+y;
+        realPY2 = 50+y2;
+        
     }
+
+   
 
     public void drawBall(Graphics g) {
         g.setColor(Color.WHITE);
         g.fillOval(400+ballX,300+ballY,50,50);
+
+        realCX = 400+ballX;
+        realCY = 300+ballY;
+        
     }
 
+    /*  realPY = 50+y;
+        realPY2 = 50+y2;
+        */
     public void drawBackground(Graphics g) {
         g.setColor(Color.BLACK);
         g.fillRect(0,0,800,600);
@@ -78,15 +75,23 @@ public class Pong { // testing github
 
         yMovement = 4;
 
-        }
-
-        if (ballY >= 250) {
+        } else if (ballY >= 250) {
 
         yMovement = -4;
 
         }
 
 
+        if (realCX <= 75 && realCY > realPY-50 && realCY < realPY+50) {
+            xMovement = 4;
+
+        } else if (realCX >= 725 && realCY > realPY2-50 && realCY < realPY2+50) {
+            xMovement = -4;
+        }
+
+        
+
+        
     }
 
 
@@ -121,16 +126,11 @@ public class Pong { // testing github
 
       /* Generate 3 new random numbers for num1, num2 and num3.  Calculate the winnings.  Updates the balance and 
          winnings. */
-      public void play(){
-      }  
 
 
 
 
       // Return true if balance > 0. Return false otherwise.
-      public boolean keepPlaying() {
-        return true;
-      } 
-
+     
 
 }
